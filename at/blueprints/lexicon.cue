@@ -5,7 +5,7 @@ package blueprints
     id: string
     revision?: int
     description?: string
-    defs: [string]: #definition
+    defs: [string]: #definition | #field
 }
 
 #definition: {

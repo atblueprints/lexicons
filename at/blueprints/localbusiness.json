@@ -10,7 +10,8 @@
                 "required": [
                     "name",
                     "category",
-                    "address"
+                    "address",
+                    "contactPoint"
                 ],
                 "properties": {
                     "name": {
@@ -20,24 +21,96 @@
                         "type": "string"
                     },
                     "openingHours": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "ref",
+                        "ref": "#openingHours"
                     },
                     "category": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "ref",
+                            "ref": "#category"
+                        }
                     },
                     "address": {
-                        "type": "string"
+                        "type": "ref",
+                        "ref": "#address"
                     },
-                    "phone": {
-                        "type": "string"
+                    "contactPoint": {
+                        "type": "array",
+                        "items": {
+                            "type": "ref",
+                            "ref": "#contactPoint"
+                        }
                     },
                     "url": {
                         "type": "string"
                     }
                 }
+            }
+        },
+        "category": {
+            "type": "object",
+            "required": [
+                "main"
+            ],
+            "properties": {
+                "main": {
+                    "type": "string"
+                },
+                "sub": {
+                    "type": "string"
+                },
+                "specific": {
+                    "type": "string"
+                }
+            }
+        },
+        "address": {
+            "type": "object",
+            "required": [
+                "addressCountry",
+                "addressLocality",
+                "streetAddress"
+            ],
+            "properties": {
+                "addressCountry": {
+                    "type": "string"
+                },
+                "addressAdministrativeLevel1": {
+                    "type": "string"
+                },
+                "addressAdministrativeLevel2": {
+                    "type": "string"
+                },
+                "addressLocality": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "streetAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "contactPoint": {
+            "type": "object",
+            "properties": {
+                "contactType": {
+                    "type": "string"
+                },
+                "telephone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            }
+        },
+        "openingHours": {
+            "type": "array",
+            "items": {
+                "type": "string"
             }
         }
     }
