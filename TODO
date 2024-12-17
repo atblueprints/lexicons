@@ -1,0 +1,3 @@
+- Review lexicon.cue against https://gist.github.com/mary-ext/6e428031c18799d1587048b456d118cb
+- Review lexicon.cue against https://gist.github.com/rogpeppe/063ac5ceff1af1bb562063f0e7bb8a48
+- Publish lexicon.cue as CUE module https://cuelang.org/docs/tutorial/working-with-the-central-registry/
